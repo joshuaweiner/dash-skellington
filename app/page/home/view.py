@@ -9,12 +9,8 @@ import dash_bootstrap_components as dbc
 
 import pandas as pd
 
-from config import config
+from page.home.model import credit_df
 
-
-credit = pd.read_csv(config.APP_DATA_DIR / 'references.csv').assign(
-    name=lambda df: df.apply(lambda x: f"[{x['name']}]({x['url']})", axis=1)
-)
 
 content = html.Div(
     dbc.Container(
@@ -49,7 +45,7 @@ content = html.Div(
                                     {"name": 'Type', "id": 'type', 'type': 'text'},
                                     {"name": 'Name', "id": 'name', 'presentation': 'markdown'},
                                 ],
-                                data=credit.to_dict('records'),
+                                data=credit_df.to_dict('records'),
                                 markdown_options={"html": True},
                                 style_cell={
                                     'backgroundColor': '#ECF0F1',
