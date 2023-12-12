@@ -1,5 +1,9 @@
 # Dash-Skellington
 
+![Dash Skellington](misc/gh__dash_skel__header.png)
+
+---
+
 ## Overview
 Dash-Skellington is a skeleton project for the Dash framework,
 designed to serve as a foundational template for creating customizable
