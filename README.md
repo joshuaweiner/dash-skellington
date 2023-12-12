@@ -13,6 +13,15 @@ applications. This skeleton project is intended to be extended and
 adapted to fit the specific data and functional needs of your
 application.
 
+## Demo Screenshots
+
+![Demo Dash Skellington 001](misc/demo__dash_skel__001.png)
+
+![Demo Dash Skellington 002](misc/demo__dash_skel__002.png)
+
+![Demo Dash Skellington 003](misc/demo__dash_skel__003.png)
+
+---
 ## Getting Started
 
 ### Setting Up the Environment
