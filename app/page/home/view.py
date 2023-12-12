@@ -17,9 +17,9 @@ content = html.Div(
         [
            dbc.Container(
                 [
-                    html.H1('Welcome to Dash-Skeleton', className='display-3'),
+                    html.H1('Welcome to Dash-Skellington', className='display-3'),
                     html.P(
-                        'Dash-Skeleton is a "skeleton" Plotly Dash project that puts forth a '
+                        'Dash-Skellington is a "skeleton" Plotly Dash project that puts forth a '
                         'set of conventions, project structure, and best practices. This project '
                         'was inspired by many people please refer to the credits section for more information.',
                         className='lead'
