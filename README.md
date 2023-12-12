@@ -13,22 +13,6 @@ applications. This skeleton project is intended to be extended and
 adapted to fit the specific data and functional needs of your
 application.
 
-## Key Components
-
-### app.py
-- Core Dash module using `dash.Dash()` with Flask.
-- Adjusted default parameters for optimal setup.
-- Configuration details are separated for ease of use and replication in `config.py`.
-
-### config.py
-- Utilizes `types.SimpleNamespace` for storing configuration constants.
-- Ideal for multi-page apps with `suppress_callback_exceptions=True`.
-
-## References
-- [Dash Documentation](https://dash.plotly.com/reference)
-- [Flask API](https://flask.palletsprojects.com/en/3.0.x/api/#application-object)
-- [Python 'types' Module](https://docs.python.org/3/library/types.html#additional-utility-classes-and-functions)
-
 ## Getting Started
 
 ### Setting Up the Environment
@@ -50,6 +34,53 @@ application.
    python3 index.py
    ```
 
+## Key Components
+
+### app.py
+- Core Dash module using `dash.Dash()` with Flask.
+- Adjusted default parameters for optimal setup.
+- Configuration details are separated for ease of use and replication in `config.py`.
+
+### config.py
+- Utilizes `types.SimpleNamespace` for storing configuration constants.
+- Ideal for multi-page apps with `suppress_callback_exceptions=True`.
+
+## index.py
+The `index` module serves as the central hub for routing and
+displaying content in the Dash-Skellington application. It is
+responsible for defining the app's layout and handling URL routing to
+render different pages based on the user's navigation.
+
+## Page Directory Structure
+The `page` directory in Dash-Skellington adopts a modular
+architecture, where each page of the application is organized into its
+own directory. 
+
+- This structure can be easily scaled up or down based on the
+  complexity of each page.
+
+- It allows for the addition of more pages with their specific MVC
+  components, facilitating the expansion of the application.
+
+Each of these directories contains three key files:
+- `model.py`: Handles data manipulation and business logic.
+- `controller.py`: Manages the logic and user interactions for the page.
+- `view.py`: Defines the layout and visual presentation of the page.
+
+### Directory Layout
+```plaintext
+page
+├── home
+│   ├── controller.py
+│   ├── model.py
+│   └── view.py
+├── movies
+│   ├── controller.py
+│   ├── model.py
+│   └── view.py
+└── not_found
+    └── view.py
+```
 
 # Credits and Inspiration
 
@@ -66,5 +97,9 @@ applications.
 | Reference    | Dash Bootstrap Components     | [Dash Bootstrap Components](https://dash-bootstrap-components.opensource.faculty.ai/)           |
 | Reference    | The Book of Dash              | [The Book of Dash](https://nostarch.com/book-dash/)                                             |
 | Reference    | A Comprehensive Guide to Building Enterprise-Level Plotly Dash Apps | [Towards Data Science Article](https://towardsdatascience.com/a-comprehensive-guide-to-building-enterprise-level-plotly-dash-apps-bd40dfe1313c) |
+
+## References
+- [Dash Documentation](https://dash.plotly.com/reference)
+- [Flask API](https://flask.palletsprojects.com/en/3.0.x/api/#application-object)
 
 
