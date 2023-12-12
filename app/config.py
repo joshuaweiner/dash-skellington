@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-""" Dash App Configuration
+""" App Configuration
 """
 
 from types import SimpleNamespace
@@ -44,8 +44,7 @@ config = SimpleNamespace(
     CALLBACK_EXCEPTIONS = True,  # Use `True` for multi-page applications
 
     APP_STYLESHEETS = [
-        'https://fonts.googleapis.com/css2?family=Inconsolata&display=swap',
-        'https://fonts.googleapis.com/css2?family=Roboto&display=swap',
+        # 'https://fonts.googleapis.com/css2?family=Inconsolata&display=swap', Add cdn links etc. here
         dbc.themes.FLATLY,
     ],
 
