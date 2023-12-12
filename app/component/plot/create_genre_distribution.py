@@ -1,6 +1,9 @@
+#!/usr/bin/env python
+
 """ 
 Creates a pie chart showing the distribution of movie genres.
 """
+
 import pandas as pd
 import plotly.express as px
 
