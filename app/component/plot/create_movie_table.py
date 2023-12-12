@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+
+"""
+Generates styled DataTable from a  DataFrame, formatted with custom column alignments and pagination.
+"""
+
 import dash
 
 

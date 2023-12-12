@@ -1,5 +1,5 @@
-""" Create Genre Distribution Pie Chart
-    Creates a pie chart showing the distribution of movie genres in a dataframe.
+""" 
+Creates a pie chart showing the distribution of movie genres.
 """
 import pandas as pd
 import plotly.express as px
