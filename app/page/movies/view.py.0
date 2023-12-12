@@ -1,0 +1,107 @@
+#!/usr/bin/env python
+
+""" Page View
+"""
+
+from dash import html, dcc
+import dash_daq as daq
+import dash_bootstrap_components as dbc
+
+
+content = html.Div(
+    [
+        dcc.Store(id='data-store'),
+        dcc.Interval(id='placeholder-id', interval=1*1000, n_intervals=0, max_intervals=1),
+        dbc.Container(
+            [
+                dbc.Row(
+                    [
+                            dbc.Col(
+                                dbc.CardGroup(
+                                [
+                                    dbc.Card(
+                                        [
+                                            html.H5('Movies', className='card-title'),
+                                            html.H1(id='stat-number-movie', className='card-text')
+                                        ]
+                                    ),
+                                    dbc.Card(
+                                        [
+                                            html.H5('Genre', className='card-title'),
+                                            html.H1(id='stat-number-genre', className='card-text')
+                                        ]
+                                    ),
+                                    dbc.Card(
+                                        [
+                                            html.H5('Country', className='card-title'),
+                                            html.H1(id='stat-number-country', className='card-text')
+                                        ]
+                                    ),
+                                ], class_name='text-center'
+                            )
+                        ),
+                        dbc.Col(
+                            [
+                                dbc.Card(
+                                    [
+                                        dbc.Stack(
+                                            [
+                                                html.Div(
+                                                    [
+                                                        html.H6('Select Genre'), dcc.Dropdown(
+                                                            id='select-genre', value=None, multi=True
+                                                        )
+                                                    ], 
+                                                ),
+                                                html.Div(
+                                                    [
+                                                        html.H6('Select Rating'), dcc.Dropdown(
+                                                            id='select-rating', value=None, multi=True
+                                                        )
+                                                    ], 
+                                                ),
+
+                                            ], gap=3
+                                        )
+                                    ]
+                                )
+                            ], width={'size': 6}
+                        )
+                    ], class_name='g-3 p-3', justify='end'
+                ),
+                dbc.Row(
+                    [
+                        dbc.Col(
+                            dbc.Card(
+                                [
+                                    dbc.CardHeader(daq.ToggleSwitch(
+                                        id='toggle-table-movie', label='Switch: Top 20 / Bottom 20', value=False
+                                    )
+                                    ),
+                                    dbc.CardBody(html.Div(id='table-movie'))
+                                ]
+                            )
+                        ),
+                        dbc.Col(dbc.Card(dcc.Graph(id='plot-genre-distribution'))),
+                    ], class_name='g-3'
+                ),
+                dbc.Row(
+                    [
+                        dbc.Col(dbc.Card(dcc.Graph(id='plot-budget-score-scatter'))),
+                        dbc.Col(dbc.Card(dcc.Graph(id='plot-time-score-scatter'))),
+                    ], class_name='g-3'
+                ),
+                dbc.Row(
+                    [
+                        dbc.Col(dbc.Card())
+                    ]
+                )
+            ], fluid=True, class_name='p-3'
+        )
+
+
+    ]
+)
+
+def layout():
+    return content
